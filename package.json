@@ -1,15 +1,65 @@
 {
-  "name": "nextjs",
-  "version": "0.1.0",
+  "name": "animal-crossing-api",
+  "author": {
+    "name": "Tim Mikeladze",
+    "email": "tim.mikeladze@gmail.com"
+  },
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "eslint '{src,pages,stories}/**/*.{js,ts,tsx,graphql}' --fix",
+    "ts": "node --max-old-space-size=8192 -- node_modules/.bin/ts-node -O '{\"module\": \"commonjs\"}' --transpile-only --project ./tsconfig.json",
+    "codegen": "yarn ts scripts/codegen.ts"
   },
   "dependencies": {
+    "@graphile-contrib/pg-simplify-inflector": "^6.1.0",
+    "@walmartlabs/json-to-simple-graphql-schema": "walmartlabs/json-to-simple-graphql-schema",
+    "apollo-server-micro": "^2.23.0",
+    "camelcase": "^6.2.0",
+    "convert-excel-to-json": "^1.7.0",
+    "dotenv": "^8.2.0",
+    "format-graphql": "^1.4.0",
+    "graphql": "^15.5.0",
+    "knex": "^0.95.4",
+    "micro": "^9.3.4",
+    "micro-cors": "^0.1.1",
     "next": "10.x",
+    "pdf2json": "^1.2.1",
+    "pg": "^8.6.0",
+    "pluralize": "^8.0.0",
+    "postgraphile": "^4.11.0",
+    "postgraphile-plugin-connection-filter": "^2.2.0",
     "react": "17.x",
-    "react-dom": "17.x"
+    "react-dom": "17.x",
+    "snake-case": "^3.0.4",
+    "xhr2": "^0.2.1"
+  },
+  "devDependencies": {
+    "@types/graphql": "^14.5.0",
+    "@types/react": "^17.0.3",
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "@typescript-eslint/parser": "^4.22.0",
+    "commitizen": "^4.2.3",
+    "eslint": "^7.24.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "git-cz": "^4.7.6",
+    "husky": "^6.0.0",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4"
+  },
+  "config": {
+    "commitizen": {
+      "path": "git-cz"
+    }
+  },
+  "lint-staged": {
+    "*": "yarn lint"
   }
 }
