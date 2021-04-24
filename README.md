@@ -12,7 +12,7 @@ https://animal-crossing-api.vercel.app/api/graphql - GraphQL endpoint.
 
 ```graphql
 {
-    fishes(first: 5 filter: {catchDifficulty: {equalTo: "Very Hard"}}) {
+    fishes(first: 5, filter: { catchDifficulty: { equalTo: "Very Hard" } }) {
         id
         name
         description
@@ -22,27 +22,52 @@ https://animal-crossing-api.vercel.app/api/graphql - GraphQL endpoint.
         spawnRates
         whereHow
         catchDifficulty
-  }
+    }
 }
+
 ```
 
 **Villagers with birthdays in June or July**
 
 ```graphql
 {
-  villagersWithSummerBirthdays: villagers(
-    filter: {birthday: {like: "6/%"}, or: {birthday: {like: "7/%"}}}
-  ) {
-    id
-    birthday
-    name
-    favoriteSong
-    hobby
-    personality
-    species
-    subtype
-  }
+    villagersWithSummerBirthdays: villagers(
+        filter: { birthday: { like: "6/%" }, or: { birthday: { like: "7/%" } } }
+    ) {
+        id
+        birthday
+        name
+        favoriteSong
+        hobby
+        personality
+        species
+        subtype
+    }
 }
+```
+
+**All seasons and events**
+
+```graphql
+{
+    seasonsAndEvents {
+        id
+        name
+        unlockDate
+        unlockMethod
+        datesNorthernHemisphere
+        year
+        displayName
+        datesSouthernHemisphere
+        internalLabel
+        nodeId
+        type
+        uniqueEntryId
+        versionLastUpdated
+        versionAdded
+    }
+}
+
 ```
 
 ## How it works
