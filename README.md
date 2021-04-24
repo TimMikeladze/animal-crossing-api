@@ -27,12 +27,15 @@ https://animal-crossing-api.vercel.app/api/graphql - GraphQL endpoint.
 
 ```
 
-**Villagers with birthdays in June or July**
+**Villagers with birthdays in June or July sorted by birthday and name**
 
 ```graphql
 {
     villagersWithSummerBirthdays: villagers(
-        filter: { birthday: { like: "6/%" }, or: { birthday: { like: "7/%" } } }
+        filter: {
+            or: [{ birthday: { like: "6/%" } }, { birthday: { like: "7/%" } }]
+        }
+        orderBy: [BIRTHDAY_ASC, NAME_ASC]
     ) {
         id
         birthday
@@ -44,6 +47,7 @@ https://animal-crossing-api.vercel.app/api/graphql - GraphQL endpoint.
         subtype
     }
 }
+
 ```
 
 **All seasons and events**
