@@ -17,25 +17,20 @@
   "dependencies": {
     "@graphile-contrib/pg-simplify-inflector": "^6.1.0",
     "@walmartlabs/json-to-simple-graphql-schema": "walmartlabs/json-to-simple-graphql-schema",
-    "apollo-server-micro": "^2.23.0",
     "camelcase": "^6.2.0",
     "convert-excel-to-json": "^1.7.0",
     "dotenv": "^8.2.0",
-    "format-graphql": "^1.4.0",
     "graphql": "^15.5.0",
     "knex": "^0.95.4",
     "micro": "^9.3.4",
-    "micro-cors": "^0.1.1",
     "next": "10.x",
-    "pdf2json": "^1.2.1",
     "pg": "^8.6.0",
     "pluralize": "^8.0.0",
     "postgraphile": "^4.11.0",
     "postgraphile-plugin-connection-filter": "^2.2.0",
     "react": "17.x",
     "react-dom": "17.x",
-    "snake-case": "^3.0.4",
-    "xhr2": "^0.2.1"
+    "snake-case": "^3.0.4"
   },
   "devDependencies": {
     "@types/graphql": "^14.5.0",
